@@ -43,7 +43,7 @@ public class ACServer {
         sslContext.setTrustStoreFile(TRUSTORE_SERVER_FILE); // contains client certificate
         sslContext.setTrustStorePass(TRUSTORE_SERVER_PWD);
         
-        URI baseUri = UriBuilder.fromUri("https://10.26.16.150/api/").port(9998).build();
+        URI baseUri = UriBuilder.fromUri("https://localhost/api/").port(9998).build();
         ResourceConfig rc = new ResourceConfig().packages("com.plataformax.resources");
         rc.register(MultiPartFeature.class);
         HttpServer server = GrizzlyHttpServerFactory.createHttpServer(baseUri, rc, true,
